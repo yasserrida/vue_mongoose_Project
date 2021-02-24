@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div id="app-2">
+      <span v-bind:title="message"> Hover your mouse over me for a few seconds to see my dynamically bound title! </span>
+    </div>
+    
+    <div>
+      <table width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action</th>                                      
+            <th>Action</th>                                      
+          </tr>
+        </thead><hr>
+        <tbody id="listuser">
+          <tr v-for="item in items" >
+            <th>{{ item.name }}</th>
+            <td>{{ item.email }}</td>
+            <td>{{ item.password }}</td>
+            <td><a href="/">Edit</a></td>
+            <td><button onclick="delete_user($('#email').text());">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script src="javascripts/jquery.min.js"></script>
+  <script src="javascripts/vue.js"></script>
+  <script src="javascripts/index.js"></script>  
+</html>
